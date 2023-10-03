@@ -5,5 +5,5 @@ def uppercase(str):
         flag = True if 97 <= asci <= 122 else False
         sub = 32 if flag else 0
 
-        print("{}".format({ord(letter) - sub:c}), end="")
+        print("{:c}".format(ord(letter) - sub), end="")
     print()
