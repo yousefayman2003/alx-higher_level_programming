@@ -1,0 +1,105 @@
+The ``0-add_integer`` module
+============================
+
+Using ``add_integer``
+---------------------
+
+Import function from the module:
+
+	>>> add_integer = __import__("0-add_integer").add_integer
+
+Test one argument of type float:
+
+	>>> add_integer(1.2)
+	99
+
+Test one negative argument of type float:
+
+	>>> add_integer(-55.5)
+	43
+
+Test two arguments of type float:
+
+	>>> add_integer(10.7, 146.3)
+	156
+
+Test two negative arguments of type float:
+
+	>>> add_integer(-10.7, -146.3)
+	-156
+
+Test one argument of type int:
+
+	>>> add_integer(1)
+	99
+
+Test one negative argument of type int:
+
+        >>> add_integer(-55)
+        43
+
+Test two arguments of type int:
+
+        >>> add_integer(10, 146)
+        156
+
+Test two negative arguments of type int:
+
+        >>> add_integer(-10, -146)
+        -156
+
+Test no arguments:
+
+	>>> add_integer()
+        Traceback (most recent call last):
+        ...
+        TypeError: add_integer() missing 1 required positional argument: 'a'
+
+Test one argument of invalid type:
+
+	>>> add_integer("a")
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+Test first argument of invalid type:
+
+        >>> add_integer("a", 0)
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+Test second argument of invalid type:
+
+        >>> add_integer(10, "a")
+        Traceback (most recent call last):
+        ...
+        TypeError: b must be an integer
+
+Test both arguments of invalid type:
+
+        >>> add_integer("a", [])
+        Traceback (most recent call last):
+        ...
+        TypeError: a must be an integer
+
+Test Adding infinity:
+
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+Test Adding nan:
+
+    >>> add_integer(0, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
+
+Test float overflow:
+
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer

@@ -1,0 +1,60 @@
+The ``5-text_indentation`` module
+=================================
+
+Using ``text_indentation``
+--------------------------
+
+Test function import:
+	>>> text_indentation = __import__("5-text_indentation").text_indentation
+
+Test no delimiter:
+	>>> text_indentation("My name is yousef ayman")
+	My name is yousef ayman
+
+Test spaces:
+	>>> text_indentation("  My name is yousef   ayman    ")
+        My name is yousef   ayman
+
+Test empty string:
+	>>> text_indentation("")
+
+Test with one delimiter:
+	>>> text_indentation("yousef:ayman ")
+	yousef:
+	<BLANKLINE>
+	ayman
+
+Test with two delimiters:
+	>>> text_indentation("yousef:ayman?mahmoud")
+        yousef:
+        <BLANKLINE>
+        ayman?
+	<BLANKLINE>
+	mahmoud
+
+Test just delimeters:
+	>>> text_indentation("?.:")
+	?
+	<BLANKLINE>
+	.
+	<BLANKLINE>
+	:
+	<BLANKLINE>
+
+Test newline:
+	>>> text_indentation("\n\n\n")
+	<BLANKLINE>
+	<BLANKLINE>
+	<BLANKLINE>
+
+Test None passed:
+	>>> text_indentation(None)
+	Traceback (most recent call last):
+    	...
+    	TypeError: text must be a string
+
+Test not a string passed:
+        >>> text_indentation([20, 324])
+        Traceback (most recent call last):
+        ...
+        TypeError: text must be a string
