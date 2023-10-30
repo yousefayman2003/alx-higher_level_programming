@@ -85,6 +85,6 @@ class Rectangle:
         """Printable String represtention for rectangle"""
 
         if self.__width != 0 or self.__height != 0:
-            return (("#" * self.__width + "\n") * self._height)[:-1]
+            return (("#" * self.__width + "\n") * self.__height)[:-1]
 
         return ""
