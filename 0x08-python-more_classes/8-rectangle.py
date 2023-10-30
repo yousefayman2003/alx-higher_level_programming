@@ -115,8 +115,8 @@ class Rectangle:
         """String represtention for rectangle"""
         s = ""
 
-        if self.__width != 0 or self.__height != 0:
-            s += "\n".join(str(Rectangle.print_symbol) *
+        if self.__width != 0 and self.__height != 0:
+            s += "\n".join(str(self.print_symbol) *
                            self.__width for _ in range(self.__height))
 
         return s
