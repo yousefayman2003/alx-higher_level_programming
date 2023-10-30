@@ -87,13 +87,10 @@ class Rectangle:
 
     def __str__(self):
         """String represtention for rectangle"""
-        s = ""
-
         if self.__width != 0 or self.__height != 0:
-            s += "\n".join(str(Rectangle.print_symbol) *
-                           self.__width for _ in range(self.__height))
-
-        return s
+            return ((str(Rectangle.print_symbol) * self.__width + "\n")
+                    * self.__height)[:-1]
+        return ""
 
     def __repr__(self):
         """Object represtention for rectangle"""
