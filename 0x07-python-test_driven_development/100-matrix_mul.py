@@ -13,7 +13,8 @@ def matrix_mul(m_a, m_b):
         Raises:
             TypeError: if m_a or m_b is not a list
             TypeError: if m_a or m_b is not a list of list
-            TypeError: if one element of those list of lists is not an integer or a float
+            TypeError: if one element of those list of lists
+                        is not an integer or a float
             TypeError: if m_a or m_b  rows are not of the same size
             ValueError: if m_a or m_b is empty
             ValueError: if m_a and m_b can't be multiplied
@@ -25,18 +26,18 @@ def matrix_mul(m_a, m_b):
     # checking for all errors that could occur
     if type(m_a) is not list:
         raise TypeError("m_a must be a list")
-    
+
     if type(m_b) is not list:
         raise TypeError("m_b must be a list")
-    
-    m_a_rect ,m_b_rect, m_a_num, m_b_num = False, False, False, False
+
+    m_a_rect, m_b_rect, m_a_num, m_b_num = False, False, False, False
     for row in m_a:
         if type(row) is not list:
             raise TypeError("m_a must be a list of lists")
 
         if len(row) != len(m_a[0]):
             m_a_rect = True
-        
+
         for number in row:
             if type(number) not in (int, float):
                 m_a_num = True

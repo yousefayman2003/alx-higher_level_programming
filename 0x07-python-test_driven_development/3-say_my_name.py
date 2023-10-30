@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Moudule that contains say my name function"""
 
+
 def say_my_name(first_name, last_name=""):
     """
         prints My name is <first name> <last name>.
@@ -8,7 +9,7 @@ def say_my_name(first_name, last_name=""):
         Args:
             first_name (str): first name.
             last_name (str): last name.
-        
+
         Raises:
             TypeError: if first_name or last_name is not a string.
     """
@@ -19,6 +20,7 @@ def say_my_name(first_name, last_name=""):
         raise TypeError("last_name must be a string")
 
     print("My name is {:s} {:s}".format(first_name, last_name))
+
 
 if __name__ == "__main__":
     import doctest

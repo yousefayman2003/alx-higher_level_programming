@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Module that contains print square function."""
 
+
 def print_square(size):
     """
         prints a square with the character #.
@@ -19,6 +20,7 @@ def print_square(size):
         raise ValueError("size must be >= 0")
 
     print((size * '#' + '\n') * size, end="")
+
 
 if __name__ == "__main__":
     import doctest
