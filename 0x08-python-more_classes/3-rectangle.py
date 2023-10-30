@@ -19,7 +19,7 @@ class Rectangle:
     @property
     def width(self):
         """Getter for private width attribute"""
-        return self.width
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -36,12 +36,12 @@ class Rectangle:
         if value < 0:
             raise ValueError("width must be >= 0")
 
-        self.width = value
+        self.__width = value
 
     @property
     def height(self):
         """Getter for private height attribute"""
-        return self.height
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -58,7 +58,7 @@ class Rectangle:
         if value < 0:
             raise ValueError("height must be >= 0")
 
-        self.height = value
+        self.__height = value
 
     def area(self):
         """
@@ -67,7 +67,7 @@ class Rectangle:
             Returns:
                 Area of rectangle.
         """
-        return self.width * self.height
+        return self.__width * self.__height
 
     def perimeter(self):
         """
@@ -76,16 +76,16 @@ class Rectangle:
             Returns:
                 Perimeter of rectangle.
         """
-        if self.width == 0 or self.height == 0:
+        if self.__width == 0 or self.__height == 0:
             return 0
 
-        return 2 * (self.width + self.height)
+        return 2 * (self.__width + self.__height)
 
     def __str__(self):
         """String represtention for rectangle"""
         s = ""
 
-        if self.width != 0 or self.height != 0:
-            s += "\n".join('#' * self.width for _ in range(self.height))
+        if self.__width != 0 or self.__height != 0:
+            s += "\n".join("#" * self.__width for _ in range(self.__height))
 
         return s
