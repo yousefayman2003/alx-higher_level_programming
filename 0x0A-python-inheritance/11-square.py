@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Module that contains Square Class."""
 Rectangle = __import__("9-rectangle").Rectangle
 
