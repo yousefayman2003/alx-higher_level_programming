@@ -1,13 +1,22 @@
 #!/usr/bin/python3
 import sys
 
-status_code = dict()
+status_code = {
+            "200": 0,
+            "301": 0,
+            "400": 0,
+            "401": 0,
+            "403": 0,
+            "404": 0,
+            "405": 0,
+            "500": 0
+        }
 i = total_size = 0
 
 
 def print_stats():
     """print the statistic"""
-    print("File size: {:d}".format(total_size))
+    print(f"File size: {total_size}")
     for key, value in sorted(status_code.items()):
         if value > 0:
             print("{:s}: {:d}".format(key, value))
