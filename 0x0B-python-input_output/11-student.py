@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """Module that contains the solution for task 9."""
 
 
