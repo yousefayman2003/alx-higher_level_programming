@@ -19,7 +19,7 @@ def pascal_triangle(n):
     while len(triangle) != n:
         tri = triangle[-1]
         row = [1]
-        for _ in range(len(tri) - 1):
+        for i in range(len(tri) - 1):
             row.append(tri[i] + tri[i + 1])
         row.append(1)
         triangle.append(row)

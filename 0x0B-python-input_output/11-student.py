@@ -19,7 +19,7 @@ class Student:
         except Exception:
             return self.__dict__
         dic = dict()
-        for key, value in self.__dict__.item():
+        for key, value in self.__dict__.items():
             if key in attrs:
                 dic[key] = value
         return dic
