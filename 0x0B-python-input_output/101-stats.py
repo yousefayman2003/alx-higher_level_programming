@@ -7,7 +7,7 @@ i = total_size = 0
 
 def print_stats():
     """print the statistic"""
-    print("File size: {total_size}".format(total_size))
+    print("File size: {:d}".format(total_size))
     for key, value in sorted(status_code.items()):
         if value > 0:
             print("{:s}: {:d}".format(key, value))
