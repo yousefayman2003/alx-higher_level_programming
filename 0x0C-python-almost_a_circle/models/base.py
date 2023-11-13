@@ -83,7 +83,7 @@ class Base:
 
         if list_objs:
             if cls is Rectangle:
-                list_objs = [[obj.id, obj.widthj, obj.height. obj.x, obj.y]
+                list_objs = [[obj.id, obj.width, obj.height. obj.x, obj.y]
                              for obj in list_objs]
             else:
                 list_objs = [[obj.id, obj.size, obj.x, obj.y]
