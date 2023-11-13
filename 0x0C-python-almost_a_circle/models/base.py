@@ -78,6 +78,7 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """serializes object  to a file"""
         from models.rectangle import Rectangle
+        from models.square import Square
 
         file_name = f"{cls.__name__}.csv"
 
@@ -97,12 +98,10 @@ class Base:
     def load_from_file_csv(cls):
         """deserializes object  to a file"""
         from models.rectangle import Rectangle
+        from models.square import Square
 
         file_name = f"{cls.__name__}.csv"
         res = []
-
-        if not os.path.isfile(file_name):
-            return []
 
         with open(file_name, "r", encoding="utf-8", newline="") as f:
             reader = csv.reader(f)
