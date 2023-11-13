@@ -76,48 +76,40 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """serializes object  to a file"""
+        '''Saves object to csv file.'''
         from models.rectangle import Rectangle
         from models.square import Square
-
-        file_name = f"{cls.__name__}.csv"
-
-        if list_objs:
+        if list_objs is not None:
             if cls is Rectangle:
-                list_objs = [[obj.id, obj.width, obj.height. obj.x, obj.y]
-                             for obj in list_objs]
+                list_objs = [[o.id, o.width, o.height, o.x, o.y]
+                             for o in list_objs]
             else:
-                list_objs = [[obj.id, obj.size, obj.x, obj.y]
-                             for obj in list_objs]
-
-            with open(file_name, "w", encoding="utf-8", newline="") as f:
-                writer = csv.writer(f)
-                writer.writerows(list_objs)
+                list_objs = [[o.id, o.size, o.x, o.y]
+                             for o in list_objs]
+        with open('{}.csv'.format(cls.__name__), 'w', newline='',
+                  encoding='utf-8') as f:
+            writer = csv.writer(f)
+            writer.writerows(list_objs)
 
     @classmethod
     def load_from_file_csv(cls):
-        """deserializes object  to a file"""
+        '''Loads object to csv file.'''
         from models.rectangle import Rectangle
         from models.square import Square
-
-        file_name = f"{cls.__name__}.csv"
-        res = []
-
-        with open(file_name, "r", encoding="utf-8", newline="") as f:
+        ret = []
+        with open('{}.csv'.format(cls.__name__), 'r', newline='',
+                  encoding='utf-8') as f:
             reader = csv.reader(f)
             for row in reader:
-                row = [int(value) for value in row]
-
+                row = [int(r) for r in row]
                 if cls is Rectangle:
-                    dic = {"id": row[0], "width": row[1], "height": row[2],
-                           "x": row[3], "y": row[4]}
+                    d = {"id": row[0], "width": row[1], "height": row[2],
+                         "x": row[3], "y": row[4]}
                 else:
-                    dic = {"id": row[0], "size": row[1],
-                           "x": row[2], "y": row[3]}
-
-                res.append(cls.create(**dic))
-
-        return res
+                    d = {"id": row[0], "size": row[1],
+                         "x": row[2], "y": row[3]}
+                ret.append(cls.create(**d))
+        return ret
 
     @staticmethod
     def draw(list_rectangles, list_squares):
