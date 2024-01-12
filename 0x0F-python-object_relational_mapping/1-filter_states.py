@@ -12,7 +12,7 @@ if __name__ == "__main__":
     # create a cursor
     cursor = connection.cursor()
     # execute a query
-    cursor.execute("""SELECT * FROM states WHERE name like 'N%'
+    cursor.execute("""SELECT * FROM states WHERE name LIKE BINARY 'N%'
                     ORDER BY id;""")
 
     # loop for each row in the result set
