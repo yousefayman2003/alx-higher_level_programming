@@ -12,8 +12,8 @@ if __name__ == "__main__":
     # create a cursor
     cursor = connection.cursor()
     # execute a query
-    cursor.execute("""SELECT * FROM states WHERE states.id BETWEEN 4 AND 5
-                    ORDER BY states.id;""")
+    cursor.execute("""SELECT * FROM states WHERE name like 'N%'
+                    ORDER BY id;""")
 
     # loop for each row in the result set
     for row in cursor.fetchall():
