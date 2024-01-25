@@ -28,10 +28,10 @@ def find_peak(nums):
 
         for i in range(2, n):
             next_number = nums[i]
-            
+
             if prev <= cur >= next_number:
                 return cur
-            
+
             prev = cur
             cur = next_number
 
