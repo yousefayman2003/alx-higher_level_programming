@@ -26,7 +26,7 @@ def find_peak(nums):
         prev = nums[0]
         cur = nums[1]
 
-        for i in range(2, size):
+        for i in range(2, n):
             next_number = nums[i]
             
             if prev <= cur >= next_number:
